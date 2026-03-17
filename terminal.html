@@ -1,0 +1,112 @@
+<!--
+MIT License
+
+Copyright (c) 2026 Department of Metaphysical Sciences
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+-->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DMS // Access Terminal</title>
+    <meta
+      name="description"
+      content="Credential terminal for restricted channels in the Department of Metaphysical Sciences archive."
+    />
+    <meta name="dms-api-base" content="https://dms-backend.bisfd.ru" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body data-page="terminal">
+    <div class="archive-shell">
+      <div class="vignette"></div>
+      <div class="grain"></div>
+
+      <header class="topbar">
+        <a href="./index.html" class="brand">DMS INTERNAL NETWORK</a>
+        <nav class="nav">
+          <a href="./index.html" data-page-link="home">Overview</a>
+          <a href="./archive.html" data-page-link="archive">Archive</a>
+          <a href="./incidents.html" data-page-link="incidents">Incidents</a>
+          <a href="./divisions.html" data-page-link="divisions">Divisions</a>
+          <a href="./terminal.html" data-page-link="terminal">Terminal</a>
+        </nav>
+        <span class="badge">CLASSIFIED</span>
+      </header>
+
+      <main class="page">
+        <section class="hero panel">
+          <div>
+            <p class="warning">Credential Terminal</p>
+            <h1>Restricted Channel Access</h1>
+            <p class="muted">
+              Validate authorization tokens against backend compartment records.
+              Requests are mirrored to Internal Review.
+            </p>
+            <div class="hero-actions">
+              <a href="./archive.html" class="btn">Back to Archive</a>
+              <a href="./incidents.html" class="btn btn-primary">Open Incident Timeline</a>
+            </div>
+          </div>
+          <aside class="status panel-soft">
+            <p class="label">Gateway State</p>
+            <ul>
+              <li><span>Token Service</span><strong>ONLINE</strong></li>
+              <li><span>Mirror Logging</span><strong>ENABLED</strong></li>
+              <li><span>Suspicious Attempts</span><strong>04</strong></li>
+              <li><span>Override Tier</span><strong class="alert">OMEGA</strong></li>
+            </ul>
+          </aside>
+        </section>
+
+        <section class="section">
+          <p class="eyebrow">Access Request Terminal</p>
+          <h2>Credential Gate</h2>
+          <div class="terminal-layout">
+            <article class="panel-soft">
+              <div class="terminal" id="terminal-output"></div>
+              <form id="token-form" class="terminal-form">
+                <input id="token-input" type="text" placeholder="ENTER CLEARANCE TOKEN" />
+                <button type="submit" class="btn btn-primary">Request Access</button>
+              </form>
+            </article>
+            <aside class="panel-soft terminal-note" id="terminal-note">
+              <p class="label">Awaiting Validation</p>
+              <h3>No Token Submitted</h3>
+              <p class="muted">
+                Submit a valid token for restricted channels. Input is mirrored
+                to Internal Review.
+              </p>
+              <p class="hint">Hint: legacy tokens still exist.</p>
+            </aside>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <p class="seal">[ DMS // Federal Archive Seal ]</p>
+        <p class="muted">This system is monitored. Unauthorized redistribution is prohibited.</p>
+      </footer>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
